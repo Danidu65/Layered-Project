@@ -1,7 +1,7 @@
-package dao.Custom.impl;
+package dao.custom.impl;
 
-import dao.Custom.OrderDAO;
 import dao.SQLUtil;
+import dao.custom.OrderDAO;
 import model.OrderDTO;
 
 import java.sql.Date;

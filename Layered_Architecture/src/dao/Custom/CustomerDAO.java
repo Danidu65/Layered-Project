@@ -1,9 +1,7 @@
-package dao;
+package dao.Custom;
 
+import dao.CrudDAO;
 import model.CustomerDTO;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 public interface CustomerDAO extends CrudDAO<CustomerDTO> {
    /* public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException;

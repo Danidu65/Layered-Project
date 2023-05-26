@@ -1,6 +1,8 @@
-package dao;
+package dao.Custom.impl;
 
 
+import dao.Custom.CustomerDAO;
+import dao.SQLUtil;
 import model.CustomerDTO;
 
 import java.sql.ResultSet;

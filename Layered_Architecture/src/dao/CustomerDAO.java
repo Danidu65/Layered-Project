@@ -1,24 +1,16 @@
 package dao;
 
-import db.DBConnection;
 import model.CustomerDTO;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface CustomerDAO {
-    public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException;
-
-    public void saveCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException;
-
-    public void updateCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException;
-
-    public void deleteCustomer(String id) throws SQLException, ClassNotFoundException;
-
+public interface CustomerDAO extends CrudDAO<CustomerDTO> {
+   /* public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException;
+    public boolean addCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
+    public boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
     public boolean existCustomer(String id) throws SQLException, ClassNotFoundException;
-
-    public ResultSet allCustomerIds() throws SQLException, ClassNotFoundException;
-
-    public ResultSet customerId() throws SQLException, ClassNotFoundException;
-
+    public String generateNewID() throws SQLException, ClassNotFoundException;
+    public boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
+    public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException;*/
 }

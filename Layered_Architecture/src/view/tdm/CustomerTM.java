@@ -12,10 +12,10 @@ public class CustomerTM implements Comparable<CustomerTM> {
     private String name;
     private String address;
 
-    public CustomerTM(String string, String rstString, String s) {
+    public CustomerTM() {
     }
 
-    public CustomerTM(String id) {
+    public CustomerTM(String id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;

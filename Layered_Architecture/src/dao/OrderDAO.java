@@ -1,17 +1,11 @@
 package dao;
 
-import db.DBConnection;
+import model.OrderDTO;
 
-import java.sql.*;
-import java.time.LocalDate;
+import java.sql.SQLException;
 
-public interface OrderDAO {
-
-    public ResultSet getAllOrders() throws SQLException, ClassNotFoundException;
-
-
-
-    public boolean selectOrderId(String orderId);
-
-    public boolean saveOrder(String orderId, LocalDate orderDate, String customerId) throws SQLException;
+public interface OrderDAO extends CrudDAO<OrderDTO>{
+//    public String generateOID() throws SQLException, ClassNotFoundException;
+//    public boolean existOrder(String orderId) throws SQLException, ClassNotFoundException;
+//    public boolean saveOrder(OrderDTO dto) throws SQLException, ClassNotFoundException;
 }

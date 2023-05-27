@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eb35afa-8433-4082-bba5-87108218ed11" name="Changes" comment="Changed">
-      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/CustomerBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/ItemBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/PurchaseOrderBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/SuperDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/AppInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/controller/MainFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/controller/MainFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/controller/ManageCustomersFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/controller/ManageCustomersFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/controller/ManageItemsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/controller/ManageItemsFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/CrudDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/CrudDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/ItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/OrderDetailsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/OrderDetailsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/CustomerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/ItemDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/OrderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/OrderDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/OrderDetailsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/OrderDetailsDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/model/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/model/CustomerDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +35,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "H:/Second Semester/Project 01/Working/Layered-Project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/Second Semester/Project 01/Working/Layered-Project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="AppInitializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AppInitializer" />
@@ -95,7 +82,8 @@
       <updated>1685073414191</updated>
       <workItem from="1685073415467" duration="2436000" />
       <workItem from="1685075891843" duration="6764000" />
-      <workItem from="1685088124265" duration="3406000" />
+      <workItem from="1685088124265" duration="3947000" />
+      <workItem from="1685160570481" duration="197000" />
     </task>
     <task id="LOCAL-00001" summary="Changed">
       <created>1685076477475</created>
@@ -118,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685078451958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed">
+      <created>1685092958668</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685092958668</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,7 @@
 package dao;
 
-import dao.custom.impl.*;
+//import dao.custom.impl.*;
+import dao.Custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -23,7 +24,7 @@ public class DAOFactory {
             case ORDER_DETAILS:
                 return (SuperDAO) new dao.custom.impl.OrderDetailsDAOImpl();
             case QUERY_DAO:
-                return (SuperDAO) new dao.custom.impl.QueryDAOImpl();
+                return (SuperDAO) new dao.Custom.impl.QueryDAOImpl();
             default:
                 return null;
         }

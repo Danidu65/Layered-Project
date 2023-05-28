@@ -1,7 +1,4 @@
-package dao.custom;
-
-import dao.CustomerDAOImpl;
-import dao.ItemDAOImpl;
+package dao;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;

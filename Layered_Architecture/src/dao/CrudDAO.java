@@ -12,5 +12,4 @@ public interface CrudDAO<T> {
     public boolean delete(String id) throws SQLException, ClassNotFoundException;
     public T search(String id) throws SQLException, ClassNotFoundException;
 
-
 }

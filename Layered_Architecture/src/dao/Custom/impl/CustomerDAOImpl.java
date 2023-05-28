@@ -1,15 +1,15 @@
 package dao.custom.impl;
 
 
+import dao.CrudDAO;
 import dao.SQLUtil;
-import dao.custom.CustomerDAO;
 import model.CustomerDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CustomerDAOImpl implements CustomerDAO {
+public class CustomerDAOImpl implements CrudDAO<CustomerDTO> {
 
     @Override
     public ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException {

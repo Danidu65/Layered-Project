@@ -1,6 +1,7 @@
 package bo.coustom.impl;
 
 import bo.coustom.OrderBO;
+import dao.Custom.OrderDAO;
 import dao.custom.impl.OrderDAOImpl;
 import model.OrderDTO;
 
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderBOImpl implements OrderBO {
-    private OrderDAO orderDAO = new OrderDAOImpl();
+    private OrderDAO orderDAO = (OrderDAO) new OrderDAOImpl();
 
     @Override
     public ArrayList<OrderDTO> getAllOrder() throws SQLException, ClassNotFoundException {

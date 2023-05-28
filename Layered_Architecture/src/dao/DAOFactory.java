@@ -1,24 +1,33 @@
 package dao;
 
+import dao.custom.impl.*;
+
 public class DAOFactory {
     private static DAOFactory daoFactory;
-
-    private DAOFactory(){
-
+    private DAOFactory() {
     }
-    public static DAOFactory getDaoFactory(){
+    public static DAOFactory getDaoFactory() {
         return (daoFactory == null) ? daoFactory = new DAOFactory() : daoFactory;
     }
-    public enum DAOTyeps{
+    public enum DAOTypes {
         CUSTOMER,ITEM,ORDER,ORDER_DETAILS,QUERY_DAO
     }
-    public ItemDAOImpl getDAO (DAOTyeps tyeps){
-        switch (tyeps){
+    public SuperDAO getDAO(DAOTypes types){
+        switch (types) {
             case CUSTOMER:
-                return new CustomerDAOImpl();
+                return (SuperDAO) new dao.custom.impl.CustomerDAOImpl();
             case ITEM:
-                return new ItemDAOImpl();
+                return (SuperDAO) new dao.custom.impl.ItemDAOImpl();
+            case ORDER:
+                return (SuperDAO) new dao.custom.impl.OrderDAOImpl();
+            case ORDER_DETAILS:
+                return (SuperDAO) new dao.custom.impl.OrderDetailsDAOImpl();
+            case QUERY_DAO:
+                return (SuperDAO) new dao.custom.impl.QueryDAOImpl();
+            default:
+                return null;
         }
-        return null;
     }
+
+
 }

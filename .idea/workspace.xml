@@ -4,13 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2eb35afa-8433-4082-bba5-87108218ed11" name="Changes" comment="Changed">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/DAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/SuperDAO.java" afterDir="false" />
+    <list default="true" id="2eb35afa-8433-4082-bba5-87108218ed11" name="Changes" comment="DAO part commite">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d90bc22c-2ebf-4220-88a9-0a8686e7b4eb.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d90bc22c-2ebf-4220-88a9-0a8686e7b4eb/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d90bc22c-2ebf-4220-88a9-0a8686e7b4eb/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d90bc22c-2ebf-4220-88a9-0a8686e7b4eb/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d90bc22c-2ebf-4220-88a9-0a8686e7b4eb/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/CustomerBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/ItemBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/OrderBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/OrderBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/OrderDetailsBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/bo/OrderDetailsBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/QueryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/Custom/impl/QueryDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/CustomerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/CustomerDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/ItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/ItemDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/OrderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/OrderDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/OrderDetailsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/OrderDetailsDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/QueryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layered_Architecture/src/dao/QueryDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Layered_Architecture/src/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Layered_Architecture/src/AppInitializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,28 +55,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/Second Semester/Project 01/Working/Layered-Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "H:/Second Semester/Project 01/Orignal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="AppInitializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AppInitializer" />
@@ -84,6 +104,9 @@
       <workItem from="1685075891843" duration="6764000" />
       <workItem from="1685088124265" duration="3947000" />
       <workItem from="1685160570481" duration="197000" />
+      <workItem from="1685160788497" duration="841000" />
+      <workItem from="1685263018907" duration="373000" />
+      <workItem from="1685263412947" duration="1383000" />
     </task>
     <task id="LOCAL-00001" summary="Changed">
       <created>1685076477475</created>
@@ -113,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685092958668</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed">
+      <created>1685160822630</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685160822630</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +151,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed" />
+    <MESSAGE value="DAO part commite" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAO part commite" />
   </component>
 </project>

@@ -1,15 +1,19 @@
 package dao;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+import model.CustomerDTO;
+import view.tdm.CustomerTM;
 
-public interface CrudDAO<T> {
-    public ArrayList<T> getAll() throws SQLException, ClassNotFoundException;
+import java.sql.SQLException;
+import java.util.List;
+
+public interface CrudDAO <T , ID > extends SuperDAO{
+    public List<T> loadAll() throws SQLException, ClassNotFoundException;
     public boolean add(T dto) throws SQLException, ClassNotFoundException;
+    public boolean exist(ID id) throws SQLException, ClassNotFoundException;
+    public boolean delete(ID id) throws SQLException, ClassNotFoundException;
     public boolean update(T dto) throws SQLException, ClassNotFoundException;
-    public boolean exist(String id) throws SQLException, ClassNotFoundException;
-    public String generateNewID() throws SQLException, ClassNotFoundException;
-    public boolean delete(String id) throws SQLException, ClassNotFoundException;
-    public T search(String id) throws SQLException, ClassNotFoundException;
+    public ID generateNewId() throws SQLException, ClassNotFoundException;
+    public T search(ID newValue) throws SQLException, ClassNotFoundException;
+
 
 }

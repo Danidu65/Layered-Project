@@ -1,23 +1,39 @@
 package dao.custom.impl;
 
-import dao.CrudDAO;
 import dao.SQLUtil;
+import dao.custom.OrderDetailsDAO;
 import model.OrderDetailDTO;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
-public class OrderDetailsDAOImpl implements CrudDAO<OrderDetailDTO> {
-
+public class OrderDetailsDAOimpl implements OrderDetailsDAO {
 
     @Override
-    public ArrayList<OrderDetailDTO> getAll() throws SQLException, ClassNotFoundException {
+    public List<OrderDetailDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public boolean add(OrderDetailDTO dto) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO OrderDetails (oid, itemCode, unitPrice, qty) VALUES (?,?,?,?)", dto.getOid(), dto.getItemCode(), dto.getUnitPrice(), dto.getQty());
+    public boolean add(OrderDetailDTO orderDetailDTO) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute(
+                "INSERT INTO OrderDetails (oid, itemCode, unitPrice, qty) VALUES (?,?,?,?)",
+                orderDetailDTO.getOrderId() ,
+                orderDetailDTO.getItemCode() ,
+                orderDetailDTO.getUnitPrice() ,
+                orderDetailDTO.getQty()
+        );
+
+    }
+
+    @Override
+    public boolean exist(String s) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String s) throws SQLException, ClassNotFoundException {
+        return false;
     }
 
     @Override
@@ -26,22 +42,12 @@ public class OrderDetailsDAOImpl implements CrudDAO<OrderDetailDTO> {
     }
 
     @Override
-    public boolean exist(String id) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public String generateNewID() throws SQLException, ClassNotFoundException {
+    public String generateNewId() throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public boolean delete(String id) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public OrderDetailDTO search(String id) throws SQLException, ClassNotFoundException {
+    public OrderDetailDTO search(String newValue) throws SQLException, ClassNotFoundException {
         return null;
     }
 }

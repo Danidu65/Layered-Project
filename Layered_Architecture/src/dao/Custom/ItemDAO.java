@@ -1,8 +1,9 @@
-package dao.Custom;
+package dao.custom;
 
 import dao.CrudDAO;
-import model.CustomerDTO;
+import dao.SuperDAO;
 import model.ItemDTO;
 
-public interface ItemDAO extends CrudDAO<ItemDTO> {
+public interface ItemDAO extends CrudDAO<ItemDTO , String>  , SuperDAO {
+
 }

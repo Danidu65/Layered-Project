@@ -1,7 +1,8 @@
 package controller;
 
-import bo.coustom.CustomerBO;
-import bo.coustom.impl.CustomerBOImpl;
+import bo.custom.BOFactory;
+import bo.custom.CustomerBO;
+import bo.custom.impl.CustomerBOImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
@@ -21,7 +22,7 @@ import view.tdm.CustomerTM;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -41,8 +42,11 @@ public class ManageCustomersFormController {
     public TableView<CustomerTM> tblCustomers;
     public JFXButton btnAddNewCustomer;
 
-    //DI (Property Injection)
-    CustomerBO customerBO = new CustomerBOImpl();
+    private CustomerBO customerBO = (CustomerBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.CUSTOMER);
+
+    public ManageCustomersFormController() throws SQLException, ClassNotFoundException {
+
+    }
 
     public void initialize() {
         tblCustomers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -73,17 +77,20 @@ public class ManageCustomersFormController {
 
     private void loadAllCustomers() {
         tblCustomers.getItems().clear();
+        /*Get all customers*/
         try {
-            /*Get all customers*/
-            ArrayList<CustomerDTO> allCustomers = customerBO.getAllCustomer();
-            for (CustomerDTO c : allCustomers) {
-                tblCustomers.getItems().add(new CustomerTM(c.getId(), c.getName(), c.getAddress()));
+            List<CustomerDTO> customerTMList = customerBO.loadAllCustomers();
+
+            for (CustomerDTO customerDTO:customerTMList) {
+                tblCustomers.getItems().add(new CustomerTM(customerDTO.getId() , customerDTO.getName() , customerDTO.getAddress()));
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         } catch (ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
+
     }
 
     private void initUI() {
@@ -142,12 +149,11 @@ public class ManageCustomersFormController {
         if (btnSave.getText().equalsIgnoreCase("save")) {
             /*Save Customer*/
             try {
-                if (existCustomer(id)) {
+                if (customerBO.existCustomer(id)) {
                     new Alert(Alert.AlertType.ERROR, id + " already exists").show();
                 }
 
-                //Add Customer
-                customerBO.addCustomer(new CustomerDTO(id,name,address));
+                customerBO.addCustomer(new CustomerDTO(id , name , address));
 
                 tblCustomers.getItems().add(new CustomerTM(id, name, address));
             } catch (SQLException e) {
@@ -160,12 +166,11 @@ public class ManageCustomersFormController {
         } else {
             /*Update customer*/
             try {
-                if (!existCustomer(id)) {
+                if (!customerBO.existCustomer(id)) {
                     new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
                 }
 
-                //Update Customer
-                customerBO.updateCustomer(new CustomerDTO(id,name,address));
+                customerBO.updateCustomer(new CustomerDTO(id , name , address));
 
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "Failed to update the customer " + id + e.getMessage()).show();
@@ -182,21 +187,13 @@ public class ManageCustomersFormController {
         btnAddNewCustomer.fire();
     }
 
-
-    boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
-       return customerBO.existCustomer(id);
-    }
-
-
     public void btnDelete_OnAction(ActionEvent actionEvent) {
         /*Delete Customer*/
         String id = tblCustomers.getSelectionModel().getSelectedItem().getId();
         try {
-            if (!existCustomer(id)) {
+            if (!customerBO.existCustomer(id)) {
                 new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
             }
-
-            //Delete Customer
             customerBO.deleteCustomer(id);
 
             tblCustomers.getItems().remove(tblCustomers.getSelectionModel().getSelectedItem());
@@ -213,14 +210,14 @@ public class ManageCustomersFormController {
     private String generateNewId() {
         try {
             //Generate New ID
-            return customerBO.generateNewID();
+            return customerBO.generateNewId();
+
+
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to generate a new id " + e.getMessage()).show();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
         if (tblCustomers.getItems().isEmpty()) {
             return "C00-001";
         } else {
@@ -228,13 +225,12 @@ public class ManageCustomersFormController {
             int newCustomerId = Integer.parseInt(id.replace("C", "")) + 1;
             return String.format("C00-%03d", newCustomerId);
         }
-
     }
-
     private String getLastCustomerId() {
         List<CustomerTM> tempCustomersList = new ArrayList<>(tblCustomers.getItems());
         Collections.sort(tempCustomersList);
         return tempCustomersList.get(tempCustomersList.size() - 1).getId();
     }
+
 
 }

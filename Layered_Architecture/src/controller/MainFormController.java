@@ -20,6 +20,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * @author : Sanu Vithanage
+ * @since : 0.1.0
+ **/
+
 public class MainFormController {
     @FXML
     private AnchorPane root;
@@ -36,6 +41,10 @@ public class MainFormController {
     @FXML
     private Label lblDescription;
 
+
+    /**
+     * Initializes the controller class.
+     */
     public void initialize(URL url, ResourceBundle rb) {
         FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), root);
         fadeIn.setFromValue(0.0);
@@ -95,6 +104,7 @@ public class MainFormController {
             icon.setEffect(glow);
         }
     }
+
 
     @FXML
     private void navigate(MouseEvent event) throws IOException {

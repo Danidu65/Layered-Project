@@ -1,9 +1,11 @@
 package controller;
 
-import bo.coustom.ItemBO;
-import bo.coustom.impl.ItemBOImpl;
+import bo.custom.BOFactory;
+import bo.custom.ItemBO;
+import bo.custom.impl.ItemBOImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import db.DBConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,8 +24,8 @@ import view.tdm.ItemTM;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
+import java.sql.*;
+import java.util.List;
 
 /**
  * @author : Sanu Vithanage
@@ -41,7 +43,11 @@ public class ManageItemsFormController {
     public JFXTextField txtUnitPrice;
     public JFXButton btnAddNewItem;
 
-    ItemBO itemBO = new ItemBOImpl();
+    private ItemBO itemBO = (ItemBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.ITEM);
+
+    public ManageItemsFormController() throws SQLException, ClassNotFoundException {
+
+    }
 
     public void initialize() {
         tblItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
@@ -77,10 +83,13 @@ public class ManageItemsFormController {
         tblItems.getItems().clear();
         try {
             /*Get all items*/
-            ArrayList<ItemDTO> allItems = itemBO.getAllItem();
-            for (ItemDTO i : allItems) {
-                tblItems.getItems().add(new ItemTM(i.getCode(), i.getDescription(), i.getUnitPrice(), i.getQtyOnHand()));
+
+            List<ItemDTO> itemTMList = itemBO.loadAllItems();
+
+            for (ItemDTO itemDTO : itemTMList) {
+                tblItems.getItems().add(new ItemTM(itemDTO.getCode() , itemDTO.getDescription() ,itemDTO.getUnitPrice() , itemDTO.getQtyOnHand() ));
             }
+
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         } catch (ClassNotFoundException e) {
@@ -136,9 +145,10 @@ public class ManageItemsFormController {
             if (!existItem(code)) {
                 new Alert(Alert.AlertType.ERROR, "There is no such item associated with the id " + code).show();
             }
-
-            //Delete Customer
-            itemBO.deleteItem(code);
+            Connection connection = DBConnection.getDbConnection().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("DELETE FROM Item WHERE code=?");
+            pstm.setString(1, code);
+            pstm.executeUpdate();
 
             tblItems.getItems().remove(tblItems.getSelectionModel().getSelectedItem());
             tblItems.getSelectionModel().clearSelection();
@@ -178,6 +188,7 @@ public class ManageItemsFormController {
                     new Alert(Alert.AlertType.ERROR, code + " already exists").show();
                 }
                 //Save Item
+
                 itemBO.addItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
 
                 tblItems.getItems().add(new ItemTM(code, description, unitPrice, qtyOnHand));
@@ -217,14 +228,17 @@ public class ManageItemsFormController {
     }
 
 
-    private String generateNewId() {
+    private String generateNewId(){
+        String id = null;
         try {
-            return itemBO.generateNewID();
+            id = itemBO.generateNewId();
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return "I00-001";
+
+        return id;
+
     }
 }

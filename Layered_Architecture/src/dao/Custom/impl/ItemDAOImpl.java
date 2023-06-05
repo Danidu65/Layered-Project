@@ -22,7 +22,6 @@ public class ItemDAOimpl implements ItemDAO {
         return itemDTOList;
 
     }
-
     @Override
     public boolean add(ItemDTO itemDTO) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Item (code, description, unitPrice, qtyOnHand) VALUES (?,?,?,?)" , itemDTO.getCode() , itemDTO.getDescription() , itemDTO.getUnitPrice() , itemDTO.getQtyOnHand() );

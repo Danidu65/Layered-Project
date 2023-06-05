@@ -5,5 +5,4 @@ import dao.SuperDAO;
 import model.OrderDetailDTO;
 
 public interface OrderDetailsDAO extends CrudDAO<OrderDetailDTO , String> , SuperDAO {
-
 }

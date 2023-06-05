@@ -19,7 +19,6 @@ public class SQLUtil {
         }else {
             return (T)(Boolean) (ps.executeUpdate() > 0);
         }
-
     }
 
 }

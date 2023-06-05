@@ -5,5 +5,6 @@ import dao.SuperDAO;
 import model.CustomerDTO;
 
 public interface CustomerDAO extends CrudDAO<CustomerDTO , String> , SuperDAO {
+
     // unique methods
 }

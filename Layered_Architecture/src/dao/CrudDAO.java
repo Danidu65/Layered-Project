@@ -15,5 +15,4 @@ public interface CrudDAO <T , ID > extends SuperDAO{
     public ID generateNewId() throws SQLException, ClassNotFoundException;
     public T search(ID newValue) throws SQLException, ClassNotFoundException;
 
-
 }

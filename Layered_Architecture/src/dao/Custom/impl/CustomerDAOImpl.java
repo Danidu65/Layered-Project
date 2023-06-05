@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDAOimpl implements CustomerDAO {
-
     @Override
     public List<CustomerDTO> loadAll() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT * FROM Customer");

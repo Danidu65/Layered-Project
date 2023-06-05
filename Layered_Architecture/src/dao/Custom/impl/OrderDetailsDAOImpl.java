@@ -23,7 +23,6 @@ public class OrderDetailsDAOimpl implements OrderDetailsDAO {
                 orderDetailDTO.getUnitPrice() ,
                 orderDetailDTO.getQty()
         );
-
     }
 
     @Override

@@ -20,7 +20,6 @@ public class ItemDAOimpl implements ItemDAO {
         }
 
         return itemDTOList;
-
     }
     @Override
     public boolean add(ItemDTO itemDTO) throws SQLException, ClassNotFoundException {

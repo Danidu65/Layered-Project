@@ -9,7 +9,6 @@ import java.sql.*;
 import java.util.List;
 
 public class OrderDAOimpl implements OrderDAO {
-
     @Override
     public List<OrderDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;

@@ -13,7 +13,6 @@ public class OrderDetailsDAOimpl implements OrderDetailsDAO {
     public List<OrderDetailDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
-
     @Override
     public boolean add(OrderDetailDTO orderDetailDTO) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute(

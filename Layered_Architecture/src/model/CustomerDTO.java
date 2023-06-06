@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 
-
 public class CustomerDTO implements Serializable {
     private String id;
     private String name;

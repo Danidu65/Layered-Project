@@ -20,5 +20,4 @@ public class AppInitializer extends Application {
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
-    //0715796089
 }

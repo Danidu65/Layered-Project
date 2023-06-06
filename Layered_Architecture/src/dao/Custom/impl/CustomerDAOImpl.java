@@ -21,7 +21,6 @@ public class CustomerDAOimpl implements CustomerDAO {
         return customerDTOList;
 
     }
-
     @Override
     public boolean add(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Customer (id,name, address) VALUES (?,?,?)", customerDTO.getId(), customerDTO.getName(), customerDTO.getAddress());
